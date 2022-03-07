@@ -1,0 +1,14 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories{
+	jcenter()
+	mavenCentral()
+}
+
+dependencies{
+	
+	
+	implementation 'com.google.inject:guice:3.0'
+	
+}

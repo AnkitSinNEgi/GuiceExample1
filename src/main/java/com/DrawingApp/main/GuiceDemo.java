@@ -3,6 +3,9 @@ package com.DrawingApp.main;
 import com.DrawingApp.Requests.SquareRequest;
 import com.DrawingApp.Services.DrawShape;
 import com.DrawingApp.Services.DrawSquare;
+import com.DrawingApp.module.AppModule;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 
 public class GuiceDemo 
 {
@@ -13,9 +16,18 @@ public class GuiceDemo
    {
 		if(squareReq.contains(SQUARE_REQ))
 		{
-			DrawShape d= new DrawSquare();
-			SquareRequest request = new SquareRequest(d);
+//			
+//			Injector injector = Guice.createInjector(new AppModule());
+//			DrawShape d= injector.getInstance(DrawShape.class);
+//			SquareRequest request = new SquareRequest(d);
+//			request.makeRequest();
+//			
+
+			Injector injector = Guice.createInjector(new AppModule());
+			SquareRequest request = injector.getInstance(SquareRequest.class);
 			request.makeRequest();
+			
+			
 		}
 		
 	}

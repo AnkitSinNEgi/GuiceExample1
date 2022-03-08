@@ -1,5 +1,7 @@
 package com.DrawingApp.module;
 
+import com.DrawingApp.Requests.SquareRequest;
+import com.DrawingApp.Requests.SquareRequestSubClass;
 import com.DrawingApp.Services.DrawShape;
 import com.DrawingApp.Services.DrawSquare;
 import com.google.inject.AbstractModule;
@@ -10,6 +12,7 @@ public class AppModule extends AbstractModule{
 		protected void configure()
 		{
 		 bind(DrawShape.class).to(DrawSquare.class);
+		 bind(SquareRequest.class).to(SquareRequestSubClass.class);
 		 
 		}
 }

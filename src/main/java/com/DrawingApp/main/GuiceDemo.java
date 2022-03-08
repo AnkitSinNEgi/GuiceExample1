@@ -15,21 +15,17 @@ public class GuiceDemo
  private static void sendRequest(String squareReq)
    {
 		if(squareReq.contains(SQUARE_REQ))
-		{
-//			
+		{		
 //			Injector injector = Guice.createInjector(new AppModule());
 //			DrawShape d= injector.getInstance(DrawShape.class);
 //			SquareRequest request = new SquareRequest(d);
 //			request.makeRequest();
 //			
-
 			Injector injector = Guice.createInjector(new AppModule());
 			SquareRequest request = injector.getInstance(SquareRequest.class);
 			request.makeRequest();
-			
-			
+				
 		}
-		
 	}
 
  public static void main(String[] args) {
